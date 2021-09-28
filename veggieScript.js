@@ -8,7 +8,6 @@
   const popListImage = document.querySelector("#recipeImage");
   let urlString = null;
   let i;
-  //url = "https://api.edamam.com/search?q=<build array with spaces>&app_id=8eb08065&app_key=9a41dd97ff7b25c362ee38b73ef9a678"
   let grocListJS = []; //grocery list array
   const alertTest = () =>{
     grocListJS.push(userInput.value);
@@ -19,8 +18,9 @@
   }
   //populate first five recipes
   const popFiveRecip = (fiveRecip)=>{
-    const i1n = document.querySelector("#recipeName1"); //i1name
+    const i1n = document.querySelector("#recipeName1"); //item1name
     const i1i = document.querySelector("#recipeImage1"); //item1image
+    const i1l = document.querySelector("#link1"); //item1Link
     const i2n = document.querySelector("#recipeName2"); 
     const i2i = document.querySelector("#recipeImage2"); 
     const i3n = document.querySelector("#recipeName3"); 
@@ -31,6 +31,7 @@
     const i5i = document.querySelector("#recipeImage5");
     i1n.textContent=fiveRecip.hits[0].recipe.label;
     i1i.src= fiveRecip.hits[0].recipe.image;
+    i1l.href = fiveRecip.hits[0].recipe.uri;
     i2n.textContent=fiveRecip.hits[1].recipe.label;
     i2i.src= fiveRecip.hits[1].recipe.image;
     i3n.textContent=fiveRecip.hits[2].recipe.label;
@@ -52,8 +53,6 @@
       console.log("https://api.edamam.com/search?q="+urlString+"&app_id=8eb08065&app_key=9a41dd97ff7b25c362ee38b73ef9a678");
       console.log(data);
       popFiveRecip(data);
-      //popListName.textContent = data.hits[0].recipe.label;
-      //popListImage.src = data.hits[0].recipe.image;
     }
     catch(err){
       alert("Something went wrong, returned message of: " + err);

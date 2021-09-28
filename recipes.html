@@ -8,9 +8,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
-    body{
-      //overflow: hidden;
-    }
     .general {
       background-color: rgb(183, 209, 200);
     }
@@ -20,35 +17,25 @@
       width: 50%;
       padding: 10px;
     }
-
-    #like_button_container {
-      margin: auto;
-      width: 50%;
-      padding: 10px;
-    }
     .rightOfBanner{
       position: relative;
       display: inline-block;
       vertical-align: top;
+    }
+    .smallImage{
+      height:100px;
+      width:100px;
     }
     #tableText {
       text-align: center;
     }
     .veggieBanner {
       align-self: left;
-      height: 100%;
       width:300px;
       height:100%;
       object-fit: contain;
       display: inline-block;
     }
-    @keyframes blinker {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .picOfMe {}
   </style>
 </head>
 
@@ -104,27 +91,29 @@
     <li id= "r1">
       <p id = "recipeName1">
       </p>
-      <img id = "recipeImage1">
+      <a id = "link1">
+        <img class = "smallImage" id = "recipeImage1">
+      </a>
     </li>
     <li id= "r2">
       <p id = "recipeName2">
       </p>
-      <img id = "recipeImage2">
+      <img class = "smallImage" id = "recipeImage2">
     </li>
     <li id= "r3">
       <p id = "recipeName3">
       </p>
-      <img id = "recipeImage3">
+      <img class = "smallImage" id = "recipeImage3">
     </li>
     <li id= "r4">
       <p id = "recipeName4">
       </p>
-      <img id = "recipeImage4">
+      <img class = "smallImage" id = "recipeImage4">
     </li>
     <li id= "r5">
       <p id = "recipeName5">
       </p>
-      <img id = "recipeImage5">
+      <img class = "smallImage" id = "recipeImage5">
     </li>
   </ol>
   <script src="veggieScript.js"></script>
