@@ -8,6 +8,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
+    body{
+      //overflow: hidden;
+    }
     .general {
       background-color: rgb(183, 209, 200);
     }
@@ -23,18 +26,22 @@
       width: 50%;
       padding: 10px;
     }
-
+    .rightOfBanner{
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+    }
     #tableText {
       text-align: center;
     }
-
-    .blinking {
-      animation: blinker 1s linear infinite;
-      font-style: italic;
-      font-size:large;
-      color: red;
+    .veggieBanner {
+      align-self: left;
+      height: 100%;
+      width:300px;
+      height:100%;
+      object-fit: contain;
+      display: inline-block;
     }
-
     @keyframes blinker {
       50% {
         opacity: 0;
@@ -51,33 +58,76 @@
       <a class="navbar-brand" href="#">Justin T.</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link"
               href="https://www.linkedin.com/in/justin-truesell-279478121/">LinkedIn</a></li>
           <li class="nav-item"><a class="nav-link" href="https://github.com/truesellj">GitHub</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="recipes.html">Recipe Maker</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="center"><img src="res/me.png" alt="Should be a pic of me"></div>
-  <div class="center">
-    <table class="table container-fluid">
-      <thead>
-        <tr style="text-align:center">
-          <td id="tableText">About Me</td>
-        </tr>
-      </thead>
-      <tr>
-        <td id="tableText">
-         Currently chronicling my journey in finding my first web dev job.
-          <br><div class="blinking">THIS SITE IS UNDER CONSTRUCTION</div>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div id="like_button_container"></div>
+<img class="veggieBanner" src="res/veggieBanner.jpg" alt= "banner with vegetables on it">
+<table class = "rightOfBanner">
+  <tr>
+    <td>
+      <p>
+        Add ingredients to your list one by one
+      </p>
+      <p>
+           Then click "Add item"
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <form>
+        <button class = "storeItem">
+          Add item
+        </button>
+        <input class = "userInput" type="text" placeholder="Add an ingredient here"></input>
+        <button class = "getRecip">
+          Get Recipes
+        </button>
+      </form>
+    </td>
+    <td>
+      <h1>Grocery List Items</h1>
+      <ul id = "grocList">
+
+      </ul>
+    </td>
+  </tr>
+</table>
+  <ol class = "rightOfBanner">
+    <li id= "r1">
+      <p id = "recipeName1">
+      </p>
+      <img id = "recipeImage1">
+    </li>
+    <li id= "r2">
+      <p id = "recipeName2">
+      </p>
+      <img id = "recipeImage2">
+    </li>
+    <li id= "r3">
+      <p id = "recipeName3">
+      </p>
+      <img id = "recipeImage3">
+    </li>
+    <li id= "r4">
+      <p id = "recipeName4">
+      </p>
+      <img id = "recipeImage4">
+    </li>
+    <li id= "r5">
+      <p id = "recipeName5">
+      </p>
+      <img id = "recipeImage5">
+    </li>
+  </ol>
+  <script src="veggieScript.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js" crossorigin></script>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -87,8 +137,6 @@
   <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-  <!-- Load our React component. -->
-  <script src="like_button.js"></script>
 </body>
 
 </html>
