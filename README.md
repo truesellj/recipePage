@@ -7,4 +7,4 @@ The list is unforunately hard coded until I get better at dynamically declaring 
 
 There really is only error protection for sending bad information to the API via the try-catch statement, I didn't include too much other error check due to time constraints.
 
-The first image link should be clickable, for some reason most of the recipes do not go to the correct recipe page.
+All images should be clickable as links to the specified recipe
